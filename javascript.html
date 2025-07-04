@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greeting Form</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    input, select, button {
+      padding: 10px 15px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="name" placeholder="Enter your name" />
+  <br />
+  <select id="op">
+    <option value="gm">9 to 12</option>
+    <option value="ga">12 to 5</option>
+    <option value="ge">5 to 7</option>
+    <option value="gn">7 to 12</option>
+  </select>
+  <br />
+  <button onclick="getclick()">SUBMIT</button>
+  <h1 id="head"></h1>
+
+  <script>
+    var ele1 = document.getElementById("head");
+
+    function getclick() {
+      var option = document.getElementById("op").value;
+      var name = document.getElementById("name").value;
+      var message = "";
+
+      if (option == "gm") {
+        message = "Good Morning";
+      } else if (option == "ga") {
+        message = "Good Afternoon";
+      } else if (option == "ge") {
+        message = "Good Evening";
+      } else if (option == "gn") {
+        message = "Good Night";
+      } else {
+        message = "Hello";
+      }
+
+      ele1.innerHTML = `Hello ${name}, ${message}`;
+    }
+  </script>
+</body>
+</html>
